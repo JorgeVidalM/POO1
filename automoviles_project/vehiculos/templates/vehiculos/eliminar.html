@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>¿Estás seguro de que deseas eliminar "{{ auto }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'lista_automoviles' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
